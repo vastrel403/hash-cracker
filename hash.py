@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import hashlib
 import itertools
 import os
@@ -7,7 +6,7 @@ import threading
 import time
 import datetime
 
-# Renkleri tamamen kapat - ANSI kodları çıktıda görünmez
+#istiyorsanız renkli yapabilirsiniz,bu classı silmeniz yeter
 class _Bos:
     def __getattr__(self, _):
         return ""
@@ -154,8 +153,6 @@ def main():
     print(Fore.CYAN + f"  Hedef     : {hash_value}")
     print(Fore.CYAN + f"  Wordlist  : {', '.join(WORDLISTS)}")
     print(WHITE + "-" * 64 + RESET)
-
-    # ====================================================================== tarama
     start_time = time.time()
     total_attempts = 0
     found = None
@@ -179,9 +176,6 @@ def main():
             with open(wordlist, "rb", buffering=1024 * 1024) as handle:
                 for ham_satir in handle:
                     islenen_bayt += len(ham_satir)
-                    # NOT: Hashleme orijinal baytlar üzerinden yapılır; decode/encode
-                    # turuna sokulmaz. Aksi halde UTF-8 olmayan satırlarda hash
-                    # eşleşmeleri kaçırılabilir.
                     candidate_bytes = ham_satir.rstrip(b"\r\n")
                     if not candidate_bytes:
                         continue
