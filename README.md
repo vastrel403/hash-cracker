@@ -22,8 +22,8 @@ Wordlist (sözlük) tabanlı MD5 / SHA1 / SHA256 / SHA512 hash kırma aracı. Te
 ## Kurulum
 
 ```bash
-git clone https://github.com/<kullanici-adi>/<repo-adi>.git
-cd <repo-adi>
+https://github.com/vastrel403/hash-cracker.git
+cd hash-cracker
 ```
 
 ## Kullanım
